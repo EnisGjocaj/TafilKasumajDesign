@@ -1,0 +1,185 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap');
+
+/* Styles for Section 1 */
+
+
+.non-visible {
+    opacity: 0;
+    transition: all 2s;
+    filter: blur(5px);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+}
+
+
+.section1 {
+  background: #6868AC;
+}
+
+.section1 div {
+  font-family: 'Calligraffitti', cursive;
+  font-weight: 700;
+  font-size: 13rem;
+  position: absolute;
+  text-shadow: -15px 5px 20px #ced0d3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #F9f1cc;
+  text-shadow: 5px 5px 0px #FFB650, 
+               10px 10px 0px #FFD662, 
+               15px 15px 0px #FF80BF, 
+               20px 20px 0px #EF5097, 
+               25px 25px 0px #6868AC, 
+               30px 30px 0px #90B1E0;
+}
+
+/* Styles for Section 2 */
+.section2 {
+  font-family: 'Exo 2', sans-serif;
+  background: #3fa1fb;
+  background: linear-gradient(142deg, rgba(63, 161, 251, 1) 0%, rgba(252, 70, 168, 1) 100%);
+}
+
+.section2 .header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 4rem);
+}
+
+.section2 .title-wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  transform: skew(0, -10deg);
+}
+
+.section2 .top-title,
+.section2 .bottom-title {
+  text-align: center;
+  display: block;
+  color: #fff;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.section2 .top-title {
+  order: 1;
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+}
+
+.section2 .bottom-title {
+  order: 3;
+  margin-top: 2rem;
+  padding-left: 2rem;
+}
+
+.section2 .sweet-title {
+  order: 2;
+  color: #fde9ff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 0.75em;
+  text-align: center;
+  text-shadow: 3px 1px 1px #4af7ff, 
+               2px 2px 1px #165bfb, 
+               4px 2px 1px #4af7ff, 
+               3px 3px 1px #165bfb, 
+               5px 3px 1px #4af7ff, 
+               4px 4px 1px #165bfb, 
+               6px 4px 1px #4af7ff, 
+               5px 5px 1px #165bfb, 
+               7px 5px 1px #4af7ff, 
+               6px 6px 1px #165bfb, 
+               8px 6px 1px #4af7ff, 
+               7px 7px 1px #165bfb, 
+               9px 7px 1px #4af7ff;
+}
+
+.section2 .sweet-title span {
+  display: block;
+  position: relative;
+}
+
+.section2 .sweet-title span:before {
+  content: attr(data-text);
+  position: absolute;
+  text-shadow: 2px 2px 1px #e94aa1, 
+               -1px -1px 1px #c736f9, 
+               -2px 2px 1px #e94aa1, 
+               1px -1px 1px #f736f9;
+  z-index: 1;
+}
+
+.section2 .sweet-title span:nth-child(1) {
+  padding-right: 2.25rem;
+}
+
+.section2 .sweet-title span:nth-child(2) {
+  padding-left: 2.25rem;
+}
+
+/* Styles for Section 3 */
+@property --k {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: false;
+}
+
+.section3 {
+  display: grid;
+  height: 100%;
+  background: #000;
+}
+
+.section3 svg[height='0'] {
+  position: absolute;
+}
+
+.section3 h1 {
+  --k: 0;
+  place-self: center;
+  background: linear-gradient(90deg, 
+              hsl(calc(var(--k)*1turn), 95%, 65%), 
+              hsl(calc(var(--k)*1turn + 90deg), 95%, 65%)) text;
+  color: transparent;
+  font: 900 clamp(.875em, 7.25vw, 5em) arial black, sans-serif;
+  filter: url(#f);
+  text-align: center;
+  text-transform: uppercase;
+  animation: k 4s linear infinite;
+}
+
+@keyframes k {
+  to {
+    --k: 1;
+  }
+}
+
+/* Common Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
